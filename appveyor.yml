@@ -7,3 +7,15 @@ build_script:
 
 artifacts:
     - path: less-*.zip
+
+deploy:
+  release: less-$(APPVEYOR_REPO_TAG_NAME)
+  description: 'Release $(APPVEYOR_REPO_TAG_NAME) of less'
+  provider: GitHub
+  auth_token:
+    secure: /zp2jySKlXy6bBkPZMJ1TVetLji2hciXkHNNW91Yhv08U5ya+BbaS7OQV2Ru/2oe
+  artifact: /.*\.zip/
+  draft: false
+  prerelease: false
+  on:
+    APPVEYOR_REPO_TAG: true
