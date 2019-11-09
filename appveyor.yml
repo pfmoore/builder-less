@@ -9,7 +9,6 @@ artifacts:
     - path: less-*.zip
 
 deploy:
-  release: less-$(APPVEYOR_REPO_TAG_NAME)
   description: 'Release $(APPVEYOR_REPO_TAG_NAME) of less'
   provider: GitHub
   auth_token:
