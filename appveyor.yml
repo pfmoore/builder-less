@@ -3,11 +3,7 @@ build: off
 build_script:
     - choco install zip
     - call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvars32.bat"
-    - curl http://www.greenwoodsoftware.com/less/less-551.zip -o src.zip
-    - unzip src.zip
-    - cd less-551
-    - nmake /f Makefile.wnm
-    - zip -9 ../less-551.zip *.exe
+    - build.bat
 
 artifacts:
-    - path: less-551.zip
+    - path: less-*.zip
